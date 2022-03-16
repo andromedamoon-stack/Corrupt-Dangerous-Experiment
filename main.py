@@ -145,25 +145,35 @@ def path1_pathCon():
     path1_red()
   else:
     print()
-    path1_flashlightCheck()
+    path1_dark()
 
 def path1_red():
   print()
    
-def path1_flashlightCheck():
- print()
-    # if player does not have flashlight they cannot go down the stairs
- if "flashlight" not in inventory:
-    print("The path ahead looks  dark, you can’t continue on without a light source")
-    gameOver()
-
-  else:
-    print()
-    path1_dark()
 
 def path1_dark():
   print()
+            # if player does not have flashlight they cannot go down the stairs
+  if "flashlight" not in inventory:
+    print("The path ahead looks  dark, you can’t continue on without a light source")
+    gameOver()
+  else:
+    print()
+    print("When you reach the bottom of the stairs you use your flashlight to illuminate the space. The space is flooded with water but you should still be able to walk through it. ")
+    print("When you shine your flashlight to the left you see  several steps above the water level to a door. To you your right the water is flowing down a long dark pathway. ")
+    print()
+    print("""
+█░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
+▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
+    answer == input("Left/ Right:   ")
+    if answer == 'Left' or answer == 'left':
+      print()
+      path1_left()
+    else:
+      print()
+      path1_right()
 
+    
 def path1_left():
   print()
   
