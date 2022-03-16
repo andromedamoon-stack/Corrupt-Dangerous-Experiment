@@ -139,7 +139,7 @@ def path1_pathCon():
   print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
 ▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-  path_redDark = input("Red/Dark")
+  path_redDark = input("Red/Dark:   ")
   if path_redDark == 'Red' or path_redDark == 'red':
     print()
     path1_red()
@@ -151,23 +151,15 @@ def path1_red():
   print()
    
 def path1_flashlightCheck():
-  print()
-  print() 
-  print("The path ahead looks  dark, you can’t continue on without a light source")
-  print()
-  look = input("Do you want to see if you have anything in your inventory that could help you? (Y/N)")
-  if look == 'Y' or look == 'y':
-    print_inventory()
-  else:
+ print()
     # if player does not have flashlight they cannot go down the stairs
-    if "flashlight" not in inventory:
-      print("You cannot go down there without a light source")
-      print()
-      print("While deciding what path to take you feel something hit you from behind. You black out")
-      loose()
-    else:
-     print()
-     path1_dark()
+ if "flashlight" not in inventory:
+    print("The path ahead looks  dark, you can’t continue on without a light source")
+    gameOver()
+
+  else:
+    print()
+    path1_dark()
 
 def path1_dark():
   print()
@@ -189,7 +181,7 @@ def path2a_desk():
   print()
 
   def path2_boss():
-  print()
+    print()
 
 def path2c_door():
   print()
@@ -203,7 +195,7 @@ def path2b():
   print("............")
   print()
   print(" You eventually wait so long that you eventually fall asleep")
-  loose()
+  gameOver()
 
   
 def path3():
@@ -211,11 +203,15 @@ def path3():
 
   
 def path3_library():
+ print()
+
   
 def path3_foyer():
+ print() 
+
   
 def path3_drBoss():
-  
+  print()
 
   
 def win():
@@ -225,7 +221,7 @@ def win2():
   print()
 
 
-def loose():
+def gameOver():
  print()
  print("..........")
  print("..........")
@@ -237,7 +233,7 @@ def loose():
 
 
 def playAgain():
-  print(""""""
+  print("""
 █▀▄ █▀█   █▄█ █▀█ █░█   █░█░█ ▄▀█ █▄░█ ▀█▀   ▀█▀ █▀█   █▀█ █░░ ▄▀█ █▄█   ▄▀█ █▀▀ ▄▀█ █ █▄░█ ▀█
 █▄▀ █▄█   ░█░ █▄█ █▄█   ▀▄▀▄▀ █▀█ █░▀█ ░█░   ░█░ █▄█   █▀▀ █▄▄ █▀█ ░█░   █▀█ █▄█ █▀█ █ █░▀█ ░▄""")
   answer = input("(Y/N):   ")
@@ -262,7 +258,7 @@ def addToInventory(item):
 def print_inventory():
   for i in inventory:
     print(i)
-    path1_flashlightCheck()
+    path1_path1_flashlightCheck()
 
 
 
