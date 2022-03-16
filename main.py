@@ -41,7 +41,7 @@ def attack():
   enemyHealth = enemyHealth - playerAttack
   
   if playerHealth <= 0:
-    loose()
+    gameOver()
 
 
 
@@ -116,6 +116,7 @@ def path1supply():
    pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
    if pickup == 'y' or pickup == 'Y':
     addToInventory("flashlight")
+    path1_pathCon()
    else:
     print()
     print("You leave the flashlight on the shelf")
@@ -149,7 +150,7 @@ def path1_pathCon():
 
 def path1_red():
   print()
-   
+  print(" Test ")   
 
 def path1_dark():
   print()
@@ -176,6 +177,11 @@ def path1_dark():
     
 def path1_left():
   print()
+  print("As you step inside the room the door slams behind you. You are unable to open the door. In your panic you drop your flashlight. ")
+  print()
+  print("As you struggle to open the door you start to hear noises coming from behind you. ")
+
+
   
 def path1_right():
   print()
@@ -190,8 +196,8 @@ def path2a():
 def path2a_desk():
   print()
 
-  def path2_boss():
-    print()
+def path2_boss():
+  print()
 
 def path2c_door():
   print()
@@ -264,12 +270,6 @@ def playAgain():
 def addToInventory(item):
   inventory.append(item)
 
-  
-def print_inventory():
-  for i in inventory:
-    print(i)
-    path1_path1_flashlightCheck()
-
 
 
         
@@ -301,7 +301,9 @@ print("""
 ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░""")
 print()
 print()
-startGame = input("Do you dare to enter? (Y/N): ")
+startGame = input("""
+█▀▄ █▀█   █▄█ █▀█ █░█   █▀▄ ▄▀█ █▀█ █▀▀   ▀█▀ █▀█   █▀▀ █▄░█ ▀█▀ █▀▀ █▀█ ▀█   ▄▀ █▄█ ░░▄▀ █▄░█ ▀▄ ▀
+█▄▀ █▄█   ░█░ █▄█ █▄█   █▄▀ █▀█ █▀▄ ██▄   ░█░ █▄█   ██▄ █░▀█ ░█░ ██▄ █▀▄ ░▄   ▀▄ ░█░ ▄▀░░ █░▀█ ▄▀ ▄ """)
 if startGame == 'n' or startGame == 'N':
   print("""
 █▀▄▀█ ▄▀█ █▄█ █▄▄ █▀▀   █▄░█ █▀▀ ▀▄▀ ▀█▀   ▀█▀ █ █▀▄▀█ █▀▀
