@@ -37,7 +37,7 @@ def attack():
   global playerDefense
   global playerHealth
   
-  playHealth = playHealth - enemyAttack 
+  playerHealth = playerHealth - enemyAttack 
   enemyHealth = enemyHealth - playerAttack
   
   if playerHealth <= 0:
@@ -166,7 +166,7 @@ def path1_dark():
     print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
 ▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-    answer == input("Left/ Right:   ")
+    answer = input("Left/ Right:   ")
     if answer == 'Left' or answer == 'left':
       print()
       path1_left()
