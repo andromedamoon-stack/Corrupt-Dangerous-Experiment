@@ -1,4 +1,11 @@
 #Creator: Sarah W (Andromedamoon)
+import sys 
+import time
+
+# time delay for text
+a = 2
+b = .2 # quicker delay  rate
+c = 0.08 # slower delay rate
 
 #inventory for items
 inventory = ["flashlight","knife","bandage","pipe","sword"]
@@ -48,24 +55,30 @@ def attack():
 def intro():
   print()
   print("Everything is dark")
+  time.sleep(a)
   print()
   print("A flash of lightning briefly illuminates the room")
+  time.sleep(a)
   print()
   print("You see a light switch on the wall just a few feet in front of you. You flip the switch")
+  time.sleep(a)
   print()
   print("You hear a whirl of a generator starting as the light turn on")
   print()
-
+  time.sleep(a)
   print("There is a  body  on an operating table in the middle of the room on a platform directly below the opening in the ceiling.")
   print()
+  time.sleep(a)
   print('“I’m inside a laboratory?” ')
   print()
-
+  time.sleep(a)
   print("The face has a few stitch marks on his face. Electrodes stick out from both sides of his neck.")
   print()
-
+  time.sleep(a)
   print("You see a trapdoor behind the platform")
+  time.sleep(a)
   print("......")
+  time.sleep(a)
   print("Quickly, choose a path! The doctor will be here any moment!")
   print()
   print("Path One")
@@ -79,6 +92,7 @@ def intro():
 ▀▄▀▄▀ █▀█ █ ░█░   █▀█ █░▀█ █▄▀   █▀█ █ █▄▀ ██▄""")
 
   print()
+  time.sleep(a)
   firstPath = input("What path will you choose (1/2)  ")
   if firstPath == '1':
     print()
@@ -91,9 +105,11 @@ def intro():
 def path1():
   print("After going down the trap door you you seem to be inside a basement")
   print()
+  time.sleep(a)
   print("The halls stretch on forever, layers of dust cover the walls and floor and you can see quite a few cobwebs.")
   print()
   print()
+  time.sleep(a)
   print("To your right is a supply closet.")
   print("""
 █▀▀ █░█ █▀▀ █▀▀ █▄▀   ▀█▀ █░█ █▀▀   █▀█ █▀▀ █▀▀ █ █▀▀ █▀▀   █▀▀ █▀█ █▀█   ▄▀█ █▄░█ █▄█
@@ -111,14 +127,17 @@ def path1():
 
 def path1supply():
    print()
+   time.sleep(a)
    print("You see a flashlight on one of the shelves.")
    print()
+   time.sleep(b)
    pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
    if pickup == 'y' or pickup == 'Y':
     addToInventory("flashlight")
     path1_pathCon()
    else:
     print()
+    time.sleep(a)
     print("You leave the flashlight on the shelf")
     path1_pathCon()
 
@@ -246,7 +265,9 @@ def gameOver():
  print()
  print("you are now the one strapped to the operating table in the laboratory.")
  print("you hear the sounds of people shuffling around you and the sounds of mad laughter.")
-
+ print()
+ print("")
+    
 
 def playAgain():
   print("""
@@ -301,6 +322,7 @@ print("""
 ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░""")
 print()
 print()
+time.sleep(a)
 startGame = input("""
 █▀▄ █▀█   █▄█ █▀█ █░█   █▀▄ ▄▀█ █▀█ █▀▀   ▀█▀ █▀█   █▀▀ █▄░█ ▀█▀ █▀▀ █▀█ ▀█   ▄▀ █▄█ ░░▄▀ █▄░█ ▀▄ ▀
 █▄▀ █▄█   ░█░ █▄█ █▄█   █▄▀ █▀█ █▀▄ ██▄   ░█░ █▄█   ██▄ █░▀█ ░█░ ██▄ █▀▄ ░▄   ▀▄ ░█░ ▄▀░░ █░▀█ ▄▀ ▄ """)
