@@ -213,12 +213,12 @@ def pathDark():
 def left():
   print()
   time.sleep(a)
-  print("As you step inside the room the door slams behind you. You are unable to open the door. ")
+  print("As you step inside the room the door slams behind you. You are unable to open the door.")
   time.sleep(a)
   print("In your panic you drop your flashlight.")
   print()
   time.sleep(a)
-  print("As you struggle to open the door you start to hear noises coming from behind you. ")
+  print("As you struggle to open the door you start to hear noises coming from behind you.")
 
   
 def right():
@@ -228,7 +228,7 @@ def path2():
  print()
 
   
-def path2a():
+def hide:
  print()
 
 def desk():
@@ -240,7 +240,7 @@ def igorBoss():
 def secretDoor():
   print()
   
-def path2b():
+def wait():
   print()
   print("You wait....")
   print()
@@ -349,8 +349,12 @@ def addToInventory(item):
   inventory.append(item)
 
 
+def printInventory(item):
+    for [i] in inventory
+        print inventory
 
-        
+
+
  ## main function ##
 
 print()
