@@ -9,9 +9,13 @@ b = .2 # quicker delay  rate
 c = 0.08 # slower delay rate
 
 #inventory for items
-inventory = ["flashlight","knife","bandage","pipe","sword"]
+inventory = ["flashlight","knife","pipe", "violin"]
 
-
+class mutatedRat(object):
+  enemyhealth = 60
+  enemyDefense = 10
+  enemyAttack = 3
+  
 class Player(object):
   playerHealth = 65
   playerDefense = 18
@@ -26,13 +30,13 @@ class Experiment(object):
  
 
 class Dr_Frankenstien(object):
-  enemyHealth = 50
+  enemyHealth = 64
   enemyDefense = 12
-  enemyAttack = 2
+  enemyAttack = 3
   
 
 class Igor(object):
-  enemyHealth = 50
+  enemyHealth = 55
   enemyDefense = 12
   enemyAttack = 3
  
@@ -124,7 +128,7 @@ def path1():
     pathSupply()
   else:
     print()
-    path1_pathCon()
+    pathCon()
 
 def pathSupply():
    print()
@@ -135,7 +139,8 @@ def pathSupply():
    pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
    if pickup == 'y' or pickup == 'Y':
     addToInventory("flashlight")
-    path1_pathCon()
+    pathCon()
+     
    else:
     print()
     time.sleep(a)
@@ -148,7 +153,7 @@ def pathCon():
   print("After traversing down the basement hall for a few minutes you can see that the hallway splits off into two paths")
   print()
   time.sleep(a)
-  print("You see a piece of pip on the ground near some rubble.")
+  print("You see a piece of pipe on the ground near some rubble.")
   time.sleep(a)
   pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
   
@@ -224,6 +229,9 @@ def left():
 def right():
   print()
 
+def ratSewer():
+  print()
+
 def path2():
  print()
 
@@ -239,6 +247,118 @@ def igorBoss():
 
 def secretDoor():
   print()
+  time.sleep(a)
+  print("")
+  
+def passageway():
+  print()
+  time.sleep(a)
+  print("holding the candle above you, you  follow the music down a narrow, winding stairway.")
+  print()
+  time.sleep(a)
+  print("The source of the gets closer and closer as you follow the light down... brushing against the cobwebbed walls.")
+  print()
+  time.sleep(a)
+  print(" As you pass one section of wall, an ancient sign can just barely be made out in the after glow of their light.")
+  print()
+  print()
+  print("""######################################
+           #  CAPACITY: NOT MORE THAN 3 PERSONS #
+           #      BY ORDER OF: FIRE DEPT.       #
+           #######################################
+           """)
+  print()
+  time.sleep(a)
+  print("Finally, you reach a landing. A door separates you from whatever lies beyond")
+  print()
+  library()
+
+def library():
+  print()
+  time.sleep(a):
+  print("When you open the door the music stops. ")
+  print()
+  time.sleep(a)
+  print("By the light of your candle, you see a small, creepy room, filled with musty books. ")
+  print()
+  time.sleep(a)
+  print("There is a table in the center of the floor that has  a large book, an ashtray, and a violin and bow.")
+  pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
+    if pickup == 'Y' or pickup == 'y':
+      addToInventory("violin")
+      print inventory
+      diary()
+    else:
+      print()
+      print("You leave the violin on the table")
+      diary()
+
+def diary():
+  print()
+  diary = input("Would you like to read the book? ( Y/N)")
+    if diary == 'Y' or diary == 'y':
+      print('''"HOW I DID IT" BY VICTOR FRANKENSTEIN.
+                ‘Whence, I often asked myself, did
+                the principles of life proceed? To
+                examine the causes of life... we
+                must first have recourse to death."
+''')
+      time.sleep(a)
+      print('''
+            "...and as soon as the dazzling light
+                      vanished, the oak tree had
+                    disappeared. I knew then that
+                electricity and galvanism had changed
+                          my life."''')
+      print()
+      time.sleep(a)
+      print('''When I look back now, it seems to
+              me as if this almost miraculous event
+                obliterated any last effort by the
+                spirit of preservation to avert the
+                storm that was even then hanging in
+                          the stars."''')
+      print()
+      time.sleep(a)
+      print('''"Until, from the midst of this
+                darkness, a sudden light broke in
+                upon me -- a light so brilliant and
+                wondrous, and yet so simple!"''')
+      print()
+      time.sleep(a)
+      print('''"
+              "Change the poles from plus to minus
+                and from minus to plus!"''')
+      print()
+      time.sleep(a)
+      print("
+              'I alone succeeded in discovering
+              the cause of generation of life.'")
+      print()
+      time.sleep(a)
+      print()
+      print("
+              'Nay, even more -- I, myself became
+              capable of bestowing animation upon
+              lifeless matter.'")
+      print()
+      time.sleep(a)
+      print("
+            IRREVERSIBLY COMMITTED TO THE DARK
+            DESTINY OF ALL THOSE WHO BEAR THE NAME OF 'FRANKENST' NAME
+            OR 'FRANKENSTEIN' 'FRONKONSTEEN.'"")
+
+            
+      castle()
+            
+    else:
+      print()
+      castle()
+
+
+def castle():
+  print()
+
   
 def wait():
   print()
@@ -256,9 +376,11 @@ def path3():
   print()
 
   
-def library():
+def hallwayStairs():
  print()
-
+  
+def mutatedRat():
+  print()
   
 def foyer():
  print() 
@@ -270,10 +392,29 @@ def drBoss():
   
 def winSewers():
   print()
-
+  time.sleep(a)
+  print(""" After harrowing journey through the dark passage and winning against the mutated rat you finally find what looks to be a sewage tunnel that leads outside.""")
+  time.sleep(b)
+  print("You look behind you to see the imposing castle loom over you. You think you can see a town in the distance, possibly about a mile away")
+  print()
+  time.sleep(b)
+  print("You escape to the town to find help")
+  print()
+  time.sleep(b)
+  print("You've escapes from the clastle and avoided becoming a new experiment")
+  print()
+  time.sleep(b)
+  print("Or did you really escape in time?")
+  print()
+  print(".......")
+  playAgain()
+  
 def winCastle():
   print()
 
+def winRun():
+  print()
+  
 
 def gameOver():
   print()
