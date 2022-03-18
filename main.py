@@ -275,7 +275,7 @@ def passageway():
 
 def library():
   print()
-  time.sleep(a):
+  time.sleep(a)
   print("When you open the door the music stops. ")
   print()
   time.sleep(a)
@@ -284,76 +284,76 @@ def library():
   time.sleep(a)
   print("There is a table in the center of the floor that has  a large book, an ashtray, and a violin and bow.")
   pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-    if pickup == 'Y' or pickup == 'y':
-      addToInventory("violin")
-      print inventory
-      diary()
-    else:
-      print()
-      print("You leave the violin on the table")
-      diary()
+  if pickup == 'Y' or pickup == 'y':
+    addToInventory("violin")
+    print (inventory)
+    diary()
+  else:
+    print()
+    print("You leave the violin on the table")
+    diary()
 
 def diary():
   print()
   diary = input("Would you like to read the book? ( Y/N)")
-    if diary == 'Y' or diary == 'y':
-      print('''"HOW I DID IT" BY VICTOR FRANKENSTEIN.
+  if diary == 'Y' or diary == 'y':
+    print('''HOW I DID IT" BY VICTOR FRANKENSTEIN.
                 ‘Whence, I often asked myself, did
                 the principles of life proceed? To
                 examine the causes of life... we
-                must first have recourse to death."
+                must first have recourse to death.
 ''')
-      time.sleep(a)
-      print('''
-            "...and as soon as the dazzling light
+    time.sleep(a)
+    print('''
+            ...and as soon as the dazzling light
                       vanished, the oak tree had
                     disappeared. I knew then that
                 electricity and galvanism had changed
-                          my life."''')
-      print()
-      time.sleep(a)
-      print('''When I look back now, it seems to
+                          my life.''')
+    print()
+    time.sleep(a)
+    print('''When I look back now, it seems to
               me as if this almost miraculous event
                 obliterated any last effort by the
                 spirit of preservation to avert the
                 storm that was even then hanging in
-                          the stars."''')
-      print()
-      time.sleep(a)
-      print('''"Until, from the midst of this
+                          the stars.''')
+    print()
+    time.sleep(a)
+    print(''' Until, from the midst of this
                 darkness, a sudden light broke in
                 upon me -- a light so brilliant and
-                wondrous, and yet so simple!"''')
-      print()
-      time.sleep(a)
-      print('''"
-              "Change the poles from plus to minus
-                and from minus to plus!"''')
-      print()
-      time.sleep(a)
-      print("
-              'I alone succeeded in discovering
-              the cause of generation of life.'")
-      print()
-      time.sleep(a)
-      print()
-      print("
-              'Nay, even more -- I, myself became
+                wondrous, and yet so simple! ''')
+    print()
+    time.sleep(a)
+    print('''
+              Change the poles from plus to minus
+                and from minus to plus! ''')
+    print()
+    time.sleep(a)
+    print("""
+              I alone succeeded in discovering
+              the cause of generation of life.""")
+    print()
+    time.sleep(a)
+    print()
+    print("""
+              Nay, even more -- I, myself became
               capable of bestowing animation upon
-              lifeless matter.'")
-      print()
-      time.sleep(a)
-      print("
+              lifeless matter.""")
+    print()
+    time.sleep(a)
+    print("""
             IRREVERSIBLY COMMITTED TO THE DARK
             DESTINY OF ALL THOSE WHO BEAR THE NAME OF 'FRANKENST' NAME
-            OR 'FRANKENSTEIN' 'FRONKONSTEEN.'"")
+            OR 'FRANKENSTEIN' 'FRONKONSTEEN.'""")
 
             
-      castle()
+    castle()
             
-    else:
-      print()
-      castle()
+  else:
+    print()
+    castle()
 
 
 def castle():
