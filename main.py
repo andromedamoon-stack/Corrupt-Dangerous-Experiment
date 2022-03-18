@@ -12,9 +12,9 @@ c = 0.08 # slower delay rate
 inventory = ["flashlight","knife","pipe", "violin"]
 
 class mutatedRat(object):
-  enemyhealth = 60
-  enemyDefense = 10
-  enemyAttack = 3
+  enemyhealth = 45
+  enemyDefense = 8
+  enemyAttack = 2
   
 class Player(object):
   playerHealth = 65
