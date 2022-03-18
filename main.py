@@ -228,7 +228,7 @@ def path2():
  print()
 
   
-def hide:
+def hide():
  print()
 
 def desk():
