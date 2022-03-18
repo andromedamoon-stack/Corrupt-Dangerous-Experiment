@@ -1,4 +1,5 @@
 #Creator: Sarah W (Andromedamoon)
+# Ver 1.0
 import sys 
 import time
 
@@ -120,12 +121,12 @@ def path1():
   supplyCloset = input("Y/N:  ")
   if supplyCloset == 'Y' or supplyCloset == 'y':
     print()
-    path1supply()
+    pathSupply()
   else:
     print()
     path1_pathCon()
 
-def path1supply():
+def pathSupply():
    print()
    time.sleep(a)
    print("You see a flashlight on one of the shelves.")
@@ -139,14 +140,16 @@ def path1supply():
     print()
     time.sleep(a)
     print("You leave the flashlight on the shelf")
-    path1_pathCon()
+    pathCon()
 
-def path1_pathCon():
+def pathCon():
   print()
+  time.sleep(a)
   print("After traversing down the basement hall for a few minutes you can see that the hallway splits off into two paths")
   print()
-  
+  time.sleep(a)
   print("You see a piece of pip on the ground near some rubble.")
+  time.sleep(a)
   pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
   
   if pickup == 'y' or pickup == 'Y':
@@ -155,32 +158,45 @@ def path1_pathCon():
       print("You leave the pipe where it is.")
 
   print()
-  print("on the left leads is another short hallway that leads to a red door. On the right there is stone steps that go down a level into a dark path. You can hear the sounds of running water coming from down below in the dark path")
+  time.sleep(a)
+  print("on the left leads is another short hallway that leads to a red door.")
+  time.sleep(a)
+  print("On the right there is stone steps that go down a level into a dark path")
+  time.sleep(a)
+  print(" You can hear the sounds of running water coming from down below in the dark path")
+  time.sleep(c)
   print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
 ▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-  path_redDark = input("Red/Dark:   ")
-  if path_redDark == 'Red' or path_redDark == 'red':
+  path_edDark = input("Red/Dark:   ")
+  if pathredDark == 'Red' or pathredDark == 'red':
     print()
-    path1_red()
+    pathRed()
   else:
     print()
-    path1_dark()
+    pathDark()
 
-def path1_red():
+def pathRed():
   print()
   print(" Test ")   
 
-def path1_dark():
+def pathDark():
   print()
-            # if player does not have flashlight they cannot go down the stairs
+  
+  # if player does not have flashlight they cannot go down the stairs
   if "flashlight" not in inventory:
     print("The path ahead looks  dark, you can’t continue on without a light source")
     gameOver()
   else:
     print()
-    print("When you reach the bottom of the stairs you use your flashlight to illuminate the space. The space is flooded with water but you should still be able to walk through it. ")
-    print("When you shine your flashlight to the left you see  several steps above the water level to a door. To you your right the water is flowing down a long dark pathway. ")
+    time.sleep(a)
+    print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
+    time.sleep(a)
+    print("The space is flooded with water but you should still be able to walk through it.")
+    time.sleep(a)
+    print("When you shine your flashlight to the left you see  several steps above the water level to a door.")
+    time.sleep(a)
+    print("To you your right the water is flowing down a long dark pathway.")
     print()
     print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
@@ -188,21 +204,24 @@ def path1_dark():
     answer = input("Left/ Right:   ")
     if answer == 'Left' or answer == 'left':
       print()
-      path1_left()
+      left()
     else:
       print()
-      path1_right()
+      right()
 
     
-def path1_left():
+def left():
   print()
-  print("As you step inside the room the door slams behind you. You are unable to open the door. In your panic you drop your flashlight. ")
+  time.sleep(a)
+  print("As you step inside the room the door slams behind you. You are unable to open the door. ")
+  time.sleep(a)
+  print("In your panic you drop your flashlight.")
   print()
+  time.sleep(a)
   print("As you struggle to open the door you start to hear noises coming from behind you. ")
 
-
   
-def path1_right():
+def right():
   print()
 
 def path2():
@@ -212,13 +231,13 @@ def path2():
 def path2a():
  print()
 
-def path2a_desk():
+def desk():
   print()
 
-def path2_boss():
+def igorBoss():
   print()
 
-def path2c_door():
+def secretDoor():
   print()
   
 def path2b():
@@ -237,37 +256,75 @@ def path3():
   print()
 
   
-def path3_library():
+def library():
  print()
 
   
-def path3_foyer():
+def foyer():
  print() 
 
   
-def path3_drBoss():
+def drBoss():
   print()
 
   
-def win():
+def winSewers():
   print()
 
-def win2():
+def winCastle():
   print()
 
 
 def gameOver():
- print()
- print("..........")
- print("..........")
- print('"What happened?... Where am i?"')
- print()
- print()
- print("you are now the one strapped to the operating table in the laboratory.")
- print("you hear the sounds of people shuffling around you and the sounds of mad laughter.")
- print()
- print("")
-    
+  print()
+  print("..........")
+  print("..........")
+  print('"What happened?... Where am i?"')
+  print()
+  print()
+  print("you are now the one strapped to the operating table in the laboratory.")
+  time.sleep(a)
+  print("you hear the sounds of people shuffling around you and the sounds of mad laughter.")
+  print()
+  time.sleep(b)
+  print('''🆂🅾🅾🅽, 🅰🅻🅻 🆃🅷🅴 🅴🅻🅴🅲🆃🆁🅸🅲🅰🅻 🆂🅴🅲🆁🅴🆃🆂 🅾🅵 🅷🅴🅰🆅🅴🅽 🆂🅷🅰🅻🅻 🅱🅴 🅼🅸🅽🅴❗''')
+  time.sleep(b)
+  print("""
+▒█▀▀█ █▀▀█ ░▀░ █▀▀ █▀▀ 　 ▀▀█▀▀ █░░█ █▀▀ 　 █▀▀█ █░░ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ ░░ 　 ▀█▀ █▀▀▀ █▀▀█ █▀▀█ █ 
+▒█▄▄▀ █▄▄█ ▀█▀ ▀▀█ █▀▀ 　 ░░█░░ █▀▀█ █▀▀ 　 █░░█ █░░ █▄▄█ ░░█░░ █▀▀ █░░█ █▄▄▀ █░▀░█ ▄▄ 　 ▒█░ █░▀█ █░░█ █▄▄▀ ▀ 
+▒█░▒█ ▀░░▀ ▀▀▀ ▀▀▀ ▀▀▀ 　 ░░▀░░ ▀░░▀ ▀▀▀ 　 █▀▀▀ ▀▀▀ ▀░░▀ ░░▀░░ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ░█ 　 ▄█▄ ▀▀▀▀ ▀▀▀▀ ▀░▀▀ ▄""")
+ time.sleep(b)
+ print("""
+█▄█ █▀█ █░█ ▀ █░█ █▀▀   █▀▀ █▀█ ▀█▀   █ ▀█▀ ░   █▀▄▀█ ▄▀█ █▀ ▀█▀ █▀▀ █▀█ ░
+░█░ █▄█ █▄█ ░ ▀▄▀ ██▄   █▄█ █▄█ ░█░   █ ░█░ █   █░▀░█ █▀█ ▄█ ░█░ ██▄ █▀▄ ▄""")
+  time.sleep(a)
+  print("The platform rises higher and higher. Rain starts to pour in.")
+  print()
+  time.sleep(b)
+  print('''𝑇ℎ𝑒 𝑎𝑛𝑐𝑖𝑒𝑛𝑡 𝑚𝑎𝑠𝑡𝑒𝑟𝑠 𝑝𝑟𝑜𝑚𝑖𝑠𝑒𝑑''')
+  time.sleep(b)
+  print("𝑖𝑚𝑝𝑜𝑠𝑠𝑖𝑏𝑖𝑙𝑖𝑡𝑖𝑒𝑠 𝑎𝑛𝑑 𝑝𝑒𝑟𝑓𝑜𝑟𝑚𝑒𝑑 𝑛𝑜𝑡ℎ𝑖𝑛𝑔.")
+  time.sleep(b)
+  print("𝑊𝑒 𝑠ℎ𝑎𝑙𝑙 𝑝𝑒𝑛𝑒𝑡𝑟𝑎𝑡𝑒 𝑖𝑛𝑡𝑜 𝑡ℎ𝑒 𝑟𝑒𝑐𝑒𝑠𝑠𝑒𝑠 𝑜𝑓 𝑛𝑎𝑡𝑢𝑟𝑒")
+  time.sleep(b)
+  print("𝑊𝑒 𝑠ℎ𝑎𝑙𝑙 𝑎𝑠𝑐𝑒𝑛𝑑 𝑖𝑛𝑡𝑜 𝑡ℎ𝑒 𝐻𝑒𝑎𝑣𝑒𝑛𝑠.")
+  time.sleep(b)
+  print("𝑊𝑒 𝑠ℎ𝑎𝑙𝑙 𝑐𝑜𝑚𝑚𝑎𝑛𝑑 𝑡ℎ𝑒 𝑡ℎ𝑢𝑛𝑑𝑒𝑟𝑠 𝑜𝑓 𝐻𝑒𝑎𝑣𝑒𝑛")
+  time.sleep(b)
+  print("𝘮𝘪𝘮𝘪𝘤 𝘵𝘩𝘦 𝘦𝘢𝘳𝘵𝘩𝘲𝘶𝘢𝘬𝘦 𝘢𝘯𝘥 𝘦𝘷𝘦𝘯 𝘮𝘰𝘤𝘬 𝘵𝘩𝘦 𝘪𝘯𝘷𝘪𝘴𝘪𝘣𝘭𝘦 𝘸𝘰𝘳𝘭𝘥 𝘸𝘪𝘵𝘩 𝘪𝘵𝘴 𝘰𝘸𝘯 𝘴𝘩𝘢𝘥𝘰𝘸𝘴!")
+  print()
+  print()
+  print("""🅶🅴🆃 🆁🅴🅰🅳🆈❗🆃🅷🅴 🅿🅻🅰🆃🅵🅾🆁🅼 🅽🅴🅰🆁🆂 🆃🅷🅴 🅾🅿🅴🅽🅸🅽🅶.""")
+  print()
+  print()
+  print("The platform rises through the opening and then stops. ")
+  print()
+  print("You see a flash of lightning")
+  print(".........")
+  print()
+  print("Your vision goes dark")
+  playAgain()
+
 
 def playAgain():
   print("""
@@ -275,9 +332,9 @@ def playAgain():
 █▄▀ █▄█   ░█░ █▄█ █▄█   ▀▄▀▄▀ █▀█ █░▀█ ░█░   ░█░ █▄█   █▀▀ █▄▄ █▀█ ░█░   █▀█ █▄█ █▀█ █ █░▀█ ░▄""")
   answer = input("(Y/N):   ")
   if answer == 'Y' or answer == 'y':
-        intro()
+   intro()
   else:
-        print("""
+   print("""
 █▀ █▀▀ █▀▀   █▄█ █▀█ █░█   █▄░█ █▀▀ ▀▄▀ ▀█▀   ▀█▀ █ █▀▄▀█ █▀▀
 ▄█ ██▄ ██▄   ░█░ █▄█ █▄█   █░▀█ ██▄ █░█ ░█░   ░█░ █ █░▀░█ ██▄""")
         sys.exit()
