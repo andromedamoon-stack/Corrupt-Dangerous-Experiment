@@ -5,8 +5,8 @@ import time
 
 # time delay for text
 a = 2
-b = .2 # quicker delay  rate
-c = 0.08 # slower delay rate
+b = .2 
+c = 0.08 
 
 #inventory for items
 inventory = ["flashlight","knife","pipe", "violin"]
@@ -37,6 +37,11 @@ class Igor(object):
 
 class mutatedRat(object):
   enemyhealth = 45
+  enemyDefense = 8
+  enemyAttack = 2
+
+class frauBlucher(object):
+  enemyhealh = 45
   enemyDefense = 8
   enemyAttack = 2
 
@@ -223,14 +228,30 @@ def left():
   print()
   time.sleep(a)
   print("As you struggle to open the door you start to hear noises coming from behind you.")
+  ratFight()
 
-  
+def ratFight():
+  print()
+
+
+  if  enemyHealth <= 0:
+    Frankenstien()
+  else:
+    gameOver()
+
+
 def right():
   print()
 
-def ratSewer():
+def Frankenstien():
   print()
+  if  enemyHealth <= 0:
+    winSewers()
+  else:
+    gameOver()
 
+
+  
 def path2():
  print()
 
@@ -378,7 +399,7 @@ def path3():
 def hallwayStairs():
  print()
   
-def mutatedRat():
+def frauBlutcher():
   print()
   
 def foyer():
