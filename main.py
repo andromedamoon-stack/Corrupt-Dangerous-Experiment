@@ -11,11 +11,6 @@ c = 0.08 # slower delay rate
 #inventory for items
 inventory = ["flashlight","knife","pipe", "violin"]
 
-class mutatedRat(object):
-  enemyhealth = 45
-  enemyDefense = 8
-  enemyAttack = 2
-  
 class Player(object):
   playerHealth = 65
   playerDefense = 18
@@ -39,7 +34,11 @@ class Igor(object):
   enemyHealth = 55
   enemyDefense = 12
   enemyAttack = 3
- 
+
+class mutatedRat(object):
+  enemyhealth = 45
+  enemyDefense = 8
+  enemyAttack = 2
 
 def attack():
   global enemyHealth
