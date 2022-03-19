@@ -170,92 +170,79 @@ def pathCon():
       print("You leave the pipe where it is.")
 
   print()
+  
   time.sleep(a)
-  print("on the left leads is another short hallway that leads to a red door.")
-  time.sleep(a)
-  print("On the right there is stone steps that go down a level into a dark path")
+  print("You finally reach stone steps that go down a level into a dark path")
   time.sleep(a)
   print(" You can hear the sounds of running water coming from down below in the dark path")
-  time.sleep(c)
-  print("""
-█░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
-▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-  pathredDark = input("Red/Dark:   ")
-  if pathredDark == 'Red' or pathredDark == 'red':
-    print()
-    pathRed()
-  else:
-    print()
-    pathDark()
-
-def pathRed():
   print()
-  print(" Test ")   
-
+  time.sleep(a)
+  print("You can either go down into the dark path and hope to find a way out or go back to the labratory and fight your way through the castle")
+  print()
+  time.sleep(a)
+  print("You decide to go down into the dark and try your luck")
+  pathDark()
+  
 def pathDark():
   print()
-  
-  # if player does not have flashlight they cannot go down the stairs
-  if "flashlight" not in inventory:
-    print("The path ahead looks  dark, you can’t continue on without a light source")
-    gameOver()
-  else:
-    print()
-    time.sleep(a)
-    print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
-    print()
-    time.sleep(a)
-    print("The space is flooded with water but you should still be able to walk through it.")
-    time.sleep(a)
-    print()
-    print("When you shine your flashlight to the left you see  several steps above the water level to a door.")
-    time.sleep(a)
-    print()
-    print("To you your right the water is flowing down a long dark pathway.")
-    print()
-    time.sleep(a)
-    print("""
-█░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
-▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-    answer = input("Left/ Right:   ")
-    if answer == 'Left' or answer == 'left':
-      print()
-      left()
-    else:
-      print()
-      right()
+  time.sleep(a)
+   print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
+  print()
+  time.sleep(a)
+  print("The space is flooded with water.The water is flowing down a long dark pathway. You hope it leads to a way outside and decide to walk down the flooded corridor ")
+  time.sleep(a)
+  print()
+  print(".....")
+  print()
+  time.sleep(a)
+  print(" You start to hear faint moaning from somewhere in front of you")
+  time.sleep(a)
+  print()
+  print(".....")
+  time.sleep(a)
+  print(".....")
+  print()
+  print("A tall dark figure is illuminated by your flashlight")
+  print()
+  time.sleep(a)
+  print("The man looks similar to the body you saw in the lab.")
+  print()
+time.sleep(a)
+  print("You find yourself frozen in fear. You expect the monster to attack you. He dosn't. Instead he talks")
+  print()
+  time.sleep(b)
+  print("What have I done to deserve such a sentence in hell?")
+  print()
+  time.sleep(b)
+  print("Born as a demon, a ghoul from a nightmare")
+  print()
+  time.sleep(b)
+  print("Yet one who still suffers and scars like a human as well")
+  print()
+  time.sleep(b)
+  print("Now here I stand, a half of a man")
+  print()
+  time.sleep(b)
+  print("Wondering why I draw breath!")
+  print()
+  time.sleep(b)
+  print("You realize that this must have been the original creature from Victor Frankenstien's experiments. The tortured soul must have taken refuge in the basement")
+  print()
+  time.sleep(b)
+  print("You now have two options: ")
+  print()
+  time.sleep(b)
+  print("1. Console the creature and ask him for help escaping the castle. 2. Attack the monster")
 
+  if answer == '1':
+    print()
+    print(" The monster guides you through the rest of the sewers until you reach an exit that leads to the outside world. ")
+    print()
+    time.sleep(a)
+    print("You turn to thank him but find he has already retreated back into the saftey of the dark")
+    winSewers()
     
-def left():
-  print()
-  time.sleep(a)
-  print("As you step inside the room the door slams behind you. You are unable to open the door.")
-  time.sleep(a)
-  print("In your panic you drop your flashlight.")
-  print()
-  time.sleep(a)
-  print("As you struggle to open the door you start to hear noises coming from behind you.")
-  print("The room is suddenly illuminated by a dim light")
-  print()
-  print("There are many rats scurrying around. Most look harmless. However a large rat about the size of a dog quickly scurries out and hisses at you")
-  print()
-  print("The mutated rat attacks")
-  ratFight()
-
-def ratFight():
-  print()
-  
-  if  enemyHealth <= 0:
-    right()
   else:
-    gameOver()
-
-
-def right():
-  print()
-  time.sleep(a)
-
-
   Frankenstien()
 
   
@@ -282,18 +269,24 @@ def hide():
     desk()
   else:
     print()
-    escapeAttempt()
+    leaveLab()
 
 def desk():
   print()
 
   
-def escapeAttempt():
+def leaveLab():
   print()
 
   
 def igorBoss():
   print()
+ if  enemyHealth <= 0:
+    winSewers()
+  else:
+    secretDoor()
+
+
 
 def secretDoor():
   print()
@@ -560,7 +553,7 @@ def outsideCastle():
 def winSewers():
   print()
   time.sleep(a)
-  print(""" After harrowing journey through the dark passage and winning against the mutated rat you finally find what looks to be a sewage tunnel that leads outside.""")
+  print(""" After harrowing journey through the dark sewers you finally find what looks to be a sewage tunnel that leads outside.""")
   time.sleep(b)
   print("You look behind you to see the imposing castle loom over you. You think you can see a town in the distance, possibly about a mile away")
   print()
