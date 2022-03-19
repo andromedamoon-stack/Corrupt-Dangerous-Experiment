@@ -9,7 +9,7 @@ b = .2
 c = 0.08 
 
 #inventory for items
-inventory = ["flashlight","knife","pipe", "violin"]
+inventory = ["flashlight","knife","pipe", "violin","bandage"]
 
 class Player(object):
   playerHealth = 65
@@ -89,12 +89,14 @@ def intro():
   print("......")
   time.sleep(a)
   print("Quickly, choose a path! The doctor will be here any moment!")
+  time.sleep(a)
   print()
   print("Path One")
   print("""
 ▀█▀ █▀█ ▄▀█ █▀█ █▀▄ █▀█ █▀█ █▀█
 ░█░ █▀▄ █▀█ █▀▀ █▄▀ █▄█ █▄█ █▀▄""")
   print()
+  time.sleep(a)
   print("Path two")
   print("""
 █░█░█ ▄▀█ █ ▀█▀   ▄▀█ █▄░█ █▀▄   █░█ █ █▀▄ █▀▀
@@ -120,6 +122,7 @@ def path1():
   print()
   time.sleep(a)
   print("To your right is a supply closet.")
+  time.sleep(a)
   print("""
 █▀▀ █░█ █▀▀ █▀▀ █▄▀   ▀█▀ █░█ █▀▀   █▀█ █▀▀ █▀▀ █ █▀▀ █▀▀   █▀▀ █▀█ █▀█   ▄▀█ █▄░█ █▄█
 █▄▄ █▀█ ██▄ █▄▄ █░█   ░█░ █▀█ ██▄   █▄█ █▀░ █▀░ █ █▄▄ ██▄   █▀░ █▄█ █▀▄   █▀█ █░▀█ ░█░
@@ -177,7 +180,7 @@ def pathCon():
   print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
 ▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
-  path_edDark = input("Red/Dark:   ")
+  pathredDark = input("Red/Dark:   ")
   if pathredDark == 'Red' or pathredDark == 'red':
     print()
     pathRed()
@@ -200,13 +203,17 @@ def pathDark():
     print()
     time.sleep(a)
     print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
+    print()
     time.sleep(a)
     print("The space is flooded with water but you should still be able to walk through it.")
     time.sleep(a)
+    print()
     print("When you shine your flashlight to the left you see  several steps above the water level to a door.")
     time.sleep(a)
+    print()
     print("To you your right the water is flowing down a long dark pathway.")
     print()
+    time.sleep(a)
     print("""
 █░█░█ █░█ ▄▀█ ▀█▀   █▀█ ▄▀█ ▀█▀ █░█   █░█░█ █ █░░ █░░   █▄█ █▀█ █░█   ▀█▀ ▄▀█ █▄▀ █▀▀ ▀█
 ▀▄▀▄▀ █▀█ █▀█ ░█░   █▀▀ █▀█ ░█░ █▀█   ▀▄▀▄▀ █ █▄▄ █▄▄   ░█░ █▄█ █▄█   ░█░ █▀█ █░█ ██▄ ░▄""")
@@ -228,21 +235,30 @@ def left():
   print()
   time.sleep(a)
   print("As you struggle to open the door you start to hear noises coming from behind you.")
+  print("The room is suddenly illuminated by a dim light")
+  print()
+  print("There are many rats scurrying around. Most look harmless. However a large rat about the size of a dog quickly scurries out and hisses at you")
+  print()
+  print("The mutated rat attacks")
   ratFight()
 
 def ratFight():
   print()
-
-
+  
   if  enemyHealth <= 0:
-    Frankenstien()
+    right()
   else:
     gameOver()
 
 
 def right():
   print()
+  time.sleep(a)
 
+
+  Frankenstien()
+
+  
 def Frankenstien():
   print()
   if  enemyHealth <= 0:
@@ -257,18 +273,63 @@ def path2():
 
   
 def hide():
- print()
+  print()
+  time.sleep(a)
+  print("You quickly dash under a desk that is in a cluttered corner of the room. The clutter and desk obscure you from view as long as you don't peek your head out")
+  print()
+  time.sleep(a)
+  print("Just a minute late you hear the doctor and another person enter the room while they talk about about drawing plans up.")
+  print()
+  time.sleep(a)
+  print("They seem to be distracted in the other area of the large labratory. You could take a moment to examine some of the desk drawers")
+  answer = input("Do you want to examine the desk for any supplies? (Y/N)")
+  if answer = 'y' or answer == 'Y':
+    print()
+    desk()
+  else:
+    print()
+    escapeAttempt()
 
 def desk():
   print()
 
+  
+def escapeAttempt():
+  print()
+
+  
 def igorBoss():
   print()
 
 def secretDoor():
   print()
   time.sleep(a)
-  print("")
+  print("After dealing with Igor you quickly try to find a way out. You notice that something about the bookcase looks odd")
+  print()
+  time.sleep(a)
+  print("Could it possibly be a secret door?")
+  print()
+  time.sleep(a)
+  print("You notice that there is soft music coming from somewhere")
+  print()
+  time.sleep(a)
+  print("You notice that there is soft music coming from somewhere")
+  print()
+  time.sleep(a)
+  print("The music It seem to be coming from behind this bookcase. ")
+  print()
+  time.sleep(a)
+  print("You puts your ear against the books and then feel for some hidden button or handle.")
+   print()
+  time.sleep(a)
+  print("You see one book that seems to stand out more than the others. You take a candle from the sconce and look at it closely. ")
+  print()
+  time.sleep(a)
+  print("It reads: SEX AND HAIR GROWTH: IT'S UP TO YOU")
+  print()
+  time.sleep(a)
+  print("You pull the book out from the bookshelf. Beside you a small door pops open.")
+  passageway()
   
 def passageway():
   print()
@@ -390,26 +451,118 @@ def wait():
   print()
   print(" You eventually wait so long that you eventually fall asleep")
   gameOver()
-
-  
-def path3():
-  print()
-
+ 
   
 def hallwayStairs():
- print()
-  
+  print()
+  time.sleep(a)
+  print(" You step out of the secret door into a large wide hallway. You can see the forest when you look out the window and what looks to be smoke in the distance.")
+  print()
+  time.sleep(a)
+  print("To your right the hallway eventually leads up to stairs that go upward. Possibly back to the lab")
+  print()
+  time.sleep(a)
+  print("To your left the hallway has several doors and appears to strecth on before finally reaching what looks like stairs going down ")
+  print()
+  time.sleep(a)
+  print(" You decide to go left. You walk softly to attract less attention.")
+  print()
+  time.sleep(a)
+  print("Just as you pass the second door a middle age woman steps out of the room carrying a violin that looks suspiciously like the one from the office")
+  print()
+  time.sleep(b)
+  print(" She hasn't noticed you yet! Quick what will you do?")
+  print("1. Attempt to knock her out. 2. Quickly introduce yourself and convince her you area a new assistant who got lost looking for the doctor")
+  answer = input("What option will you choose? 1 or 2")
+  if answer == '1':
+    print()
+    frauBlutcher()
+  else:
+    print()
+    time.sleep(a)
+    print('"Herr Doctor? He just stepped out to town. He should be back within the hour. Did Igor send you?"')
+    print()
+    time.sleep(a)
+    print("I believe that may have been his name, yes. You know I think I'll just wait for Herr Doctor near the front door!")
+    print()
+    time.sleep(a)
+    print("You quickly start heading down the steps at a brisk pace. Frau Blutcher shrugs and leaves to another part of the castle unconcerned about your story")
+    foyer()
+
 def frauBlutcher():
   print()
-  
+  if  enemyHealth <= 0:
+    foyer()
+  else:
+    gameOver()
 def foyer():
- print() 
+  print() 
+  time.sleep(a)
+  print('Once Frau Blutcher is out of sight you break into a run down the rest of the hallway and down the stairs')
+  print()
+  print("""When you get to the bottom of the stairs and into the foyer there is a gigantic door with a small door inside the gigantic door. Next to the door is Dr.Frankenstien inspecting several boxes""")
+  time.sleep(b)
+  print('"Who are you?"')
+  print()
+  time.sleep(b)
+  print('" Who Am I? Im Fredereck Fronkonsteen"')
+  print()
+  time.sleep(b)
+  print('" Frederick Frankenstein? Like Victor Frankenstien"')
+  print()
+  time.sleep(b)
+  print('"Fron kon steen!"')
+  print()
+  time.sleep(b)
+  print('"Are you putting me on?"')
+  print()
+  time.sleep(b)
+  print("Are you putting me on?")
+  print()
+  time.sleep(b)
+  print()
+  time.sleep(b)
+  print("""No, it's pronounced Fron kon steen. It's Fredereck Fronkonsteen. Who are you? You were sent by Herr Falkstein, weren't you?""")
+  answer = input("""1: Herr who? No-one sent me you crazy scientist! (attack)   \n 2:Herr Falkstein, of course! Yes he thought you might need an extra assistant""")
+  if answer == '1':
+    print()
+    print("Stop that! Now just stop that this instant and listen to me!")
+    drBoss()
+  else:
+    print()
+    print('You leave out the front door while the doctor wanders off in search of Igor')
+    outsideCastle()
 
-  
 def drBoss():
   print()
+  if  enemyHealth <= 0:
+    winRun()
+  else:
+    gameOver()
 
-  
+        
+def outsideCastle():
+  print()
+  time.sleep(a)
+  print('In the front courtyard you spot your small suitcase sitting near the horses.')
+  print()
+  time.sleep(a)
+  print("How did this get here? You remember having it with you before you woke up at the lab")
+  print()
+  time.sleep(a)
+  print("You now have two options. Choose Carefully")
+  print()
+  time.sleep(a)
+  print("1.Take your suitcase, steal one of the nearby horses and escape.")
+  print()
+  time.sleep(b)
+  print("2.Take your suitcase and go back inside the castle")
+  end = input("What path will you take? 1/2 :  ")
+  if end == '1':
+    winCastle()
+  else:
+    winRun()
+        
 def winSewers():
   print()
   time.sleep(a)
@@ -423,6 +576,7 @@ def winSewers():
   time.sleep(b)
   print("You've escapes from the clastle and avoided becoming a new experiment")
   print()
+  print()
   time.sleep(b)
   print("Or did you really escape in time?")
   print()
@@ -431,10 +585,57 @@ def winSewers():
   
 def winCastle():
   print()
+  time.sleep(b)
+  print("You take your suitcase and walk back into the castle")
+  print()
+  time.sleep(b)
+  print("You are overwheledmed with curiosity about what really goes on in that labratory. You decide to join the doctor as a second assistant.")
+  print(b)
+  time.sleep(b)
+  print("........")
+  print()
+  time.sleep(b)
+  print("Several Weeks later....")
+  print()
+  time.sleep(b)
+  print("""Fredrick, wearing a long, white surgeon's gown and surgical
+mask, stands over the "Body," which is strapped across the
+chest and thighs. Fredrick has a thimble on the finger of one
+hand -- a needle and thread in the other.""")
+  print()
+  time.sleep(b)
+  print("""The "Body" is on an operating table, which is in the center
+of a platform directly below the opening in the ceiling.
+Inga stands nearby.""")
+  print()
+  time.sleep(b)
+  print("""The doctor's face is illuminated by a crack of lightning. The dark circles under his eyes suggest that he is irreverably insane.""")
+  print("You are near the switches waiting for the command to start the process. You have a similar crazed expression as Igor and the doctor. ")
+  print()
+  time.sleep(b)
+  print("Go!!")
+  print("........")
+  print(".........")
+  print()
+  print()
+  time.sleep(b)
+  startAgain()
 
+        
 def winRun():
   print()
-  
+  time.sleep(b)
+  print("You successfully escape from the castle with one of the horses. After several minutes of riding down the pathway ou think you can see a town in the distance, possibly about a mile away")
+  print()
+  time.sleep(b)
+  print("You've escaped from the clastle and avoided becoming a new experiment and now see your chance to get even further away by taking a train from the town to somewhere far away from that damned castle.")
+  print()
+  print()
+  time.sleep(b)
+  print("Or did you really escape in time?")
+  print()
+  print(".......")
+  playAgain()
 
 def gameOver():
   print()
@@ -518,32 +719,22 @@ def printInventory(item):
 ## main function ##
 
   print()
-print()
+  print()
 print()
 print("""
-░█████╗░░█████╗░██████╗░██████╗░██╗░░░██╗██████╗░████████╗
-██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░░░██║██╔══██╗╚══██╔══╝
-██║░░╚═╝██║░░██║██████╔╝██████╔╝██║░░░██║██████╔╝░░░██║░░░
-██║░░██╗██║░░██║██╔══██╗██╔══██╗██║░░░██║██╔═══╝░░░░██║░░░
-╚█████╔╝╚█████╔╝██║░░██║██║░░██║╚██████╔╝██║░░░░░░░░██║░░░
-░╚════╝░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝░░░░░░░░╚═╝░░░
+▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █░░█ █▀▀█ ▀▀█▀▀ 　 █▀▀▄ █▀▀█ █▀▀▄ █▀▀▀ █▀▀ █▀▀█ █▀▀█ █░░█ █▀▀ 
+▒█░░░ █░░█ █▄▄▀ █▄▄▀ █░░█ █░░█ ░░█░░ 　 █░░█ █▄▄█ █░░█ █░▀█ █▀▀ █▄▄▀ █░░█ █░░█ ▀▀█ 
+▒█▄▄█ ▀▀▀▀ ▀░▀▀ ▀░▀▀ ░▀▀▀ █▀▀▀ ░░▀░░ 　 ▀▀▀░ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀▀▀ ▀░▀▀ ▀▀▀▀ ░▀▀▀ ▀▀▀ 
 
-██████╗░░█████╗░███╗░░██╗░██████╗░███████╗██████╗░░█████╗░██╗░░░██╗░██████╗
-██╔══██╗██╔══██╗████╗░██║██╔════╝░██╔════╝██╔══██╗██╔══██╗██║░░░██║██╔════╝
-██║░░██║███████║██╔██╗██║██║░░██╗░█████╗░░██████╔╝██║░░██║██║░░░██║╚█████╗░
-██║░░██║██╔══██║██║╚████║██║░░╚██╗██╔══╝░░██╔══██╗██║░░██║██║░░░██║░╚═══██╗
-██████╔╝██║░░██║██║░╚███║╚██████╔╝███████╗██║░░██║╚█████╔╝╚██████╔╝██████╔╝
-╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚══════╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═════╝░
-
-███████╗██╗░░██╗██████╗░███████╗██████╗░██╗███╗░░░███╗███████╗███╗░░██╗████████╗
-██╔════╝╚██╗██╔╝██╔══██╗██╔════╝██╔══██╗██║████╗░████║██╔════╝████╗░██║╚══██╔══╝
-█████╗░░░╚███╔╝░██████╔╝█████╗░░██████╔╝██║██╔████╔██║█████╗░░██╔██╗██║░░░██║░░░
-██╔══╝░░░██╔██╗░██╔═══╝░██╔══╝░░██╔══██╗██║██║╚██╔╝██║██╔══╝░░██║╚████║░░░██║░░░
-███████╗██╔╝╚██╗██║░░░░░███████╗██║░░██║██║██║░╚═╝░██║███████╗██║░╚███║░░░██║░░░
-╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░""")
+█▀▀ █░█ █▀▀█ █▀▀ █▀▀█ ░▀░ █▀▄▀█ █▀▀ █▀▀▄ ▀▀█▀▀ 
+█▀▀ ▄▀▄ █░░█ █▀▀ █▄▄▀ ▀█▀ █░▀░█ █▀▀ █░░█ ░░█░░ 
+▀▀▀ ▀░▀ █▀▀▀ ▀▀▀ ▀░▀▀ ▀▀▀ ▀░░░▀ ▀▀▀ ▀░░▀ ░░▀░░""")
 print()
 print()
-time.sleep(a)
+print("""A͇͇̝ Y̟̞͜o͕͔͕u̺̙n͉̠̙g͉͚̪ F͔̫r͓̞̙a͓̪̦n͇̝͜k̻̪̺e͔̟͇n͚͔̞s͕̫͖t̠̼e̪̺̞i͓͍̟n͓̞͚ t͇͚͜e͎̪͙x̫̙̫t͕͔̦ a͉͙̠d̫̟͖v̝̼͜e̟̟̼n̪̞͜t͓͖u̪͕͜r̟̼̦e̢̠͔""")
+print()
+print("Be careful of the choices you make- or you might end up as the next experiment")
+time.sleep(b)
 startGame = input("""D̒͒͐ò͝͝ y̾͘̚ö́́͋u͌́̓ d̀͊̐a̓̓͝r̒̒e͌͒̒ t͋̿͐o͛̈́͘ e͛͐̓n͒̈́̈́t̓̀͘ë́͛̕r͒͒̿?͒͋͝ (̔̔͘Y͌͝/͑̈́͌ N͐̐͝)͐̓͝""")
 if startGame == 'n' or startGame == 'N':
   print("""
