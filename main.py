@@ -186,7 +186,7 @@ def pathCon():
 def pathDark():
   print()
   time.sleep(a)
-   print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
+  print("When you reach the bottom of the stairs you use your flashlight to illuminate the space.")
   print()
   time.sleep(a)
   print("The space is flooded with water.The water is flowing down a long dark pathway. You hope it leads to a way outside and decide to walk down the flooded corridor ")
@@ -207,7 +207,7 @@ def pathDark():
   time.sleep(a)
   print("The man looks similar to the body you saw in the lab.")
   print()
-time.sleep(a)
+  time.sleep(a)
   print("You find yourself frozen in fear. You expect the monster to attack you. He dosn't. Instead he talks")
   print()
   time.sleep(b)
@@ -243,7 +243,7 @@ time.sleep(a)
     winSewers()
     
   else:
-  Frankenstien()
+    Frankenstien()
 
   
 def Frankenstien():
@@ -264,7 +264,7 @@ def hide():
   time.sleep(a)
   print("They seem to be distracted in the other area of the large labratory. You could take a moment to examine some of the desk drawers")
   answer = input("Do you want to examine the desk for any supplies? (Y/N)")
-  if answer = 'y' or answer == 'Y':
+  if answer == 'y' or answer == 'Y':
     print()
     desk()
   else:
@@ -276,10 +276,10 @@ def desk():
   time.sleep(a)
   print("You root around in one of the drawers and find some old papers and a knife")
   pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-   if pickup == 'y' or pickup == 'Y':
+  if pickup == 'y' or pickup == 'Y':
     addToInventory("knife")
     leaveLab()
-   else:
+  else:
     leaveLab()
   
 def leaveLab():
@@ -295,10 +295,10 @@ def leaveLab():
   print()
   time.sleep(a)
   print("Finally you hear the doctor exclaim 'You've caught something there. Yes! As a matter of fact -- I think --that this -- might -- be -- our --man!'")
-   print()
+  print()
   time.sleep(a)
   print(".......")
- print()
+  print()
   time.sleep(a)
   print("You eventually hear them leave the lab. Now is your time to escape!")
   secretDoor()
@@ -322,7 +322,7 @@ def secretDoor():
   print()
   time.sleep(a)
   print("You puts your ear against the books and then feel for some hidden button or handle.")
-   print()
+  print()
   time.sleep(a)
   print("You see one book that seems to stand out more than the others. You take a candle from the sconce and look at it closely. ")
   print()
