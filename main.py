@@ -110,7 +110,7 @@ def intro():
     path1()
   elif firstPath == '2':
     print()
-    path2()
+    hide()
 
 
 def path1():
@@ -265,12 +265,6 @@ def Frankenstien():
     winSewers()
   else:
     gameOver()
-
-
-  
-def path2():
- print()
-
   
 def hide():
   print()
