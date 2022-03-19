@@ -9,7 +9,7 @@ b = .2
 c = 0.08 
 
 #inventory for items
-inventory = ["flashlight","knife","pipe", "violin","bandage"]
+inventory = ["flashlight","knife","pipe"]
 
 class Player(object):
   playerHealth = 65
@@ -273,25 +273,40 @@ def hide():
 
 def desk():
   print()
-
+  time.sleep(a)
+  print("You root around in one of the drawers and find some old papers and a knife")
+  pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
+   if pickup == 'y' or pickup == 'Y':
+    addToInventory("knife")
+    leaveLab()
+   else:
+    leaveLab()
   
 def leaveLab():
   print()
-
-  
-def igorBoss():
+  time.sleep(a)
+  print("You hide under the desk for what feels like hours")
   print()
- if  enemyHealth <= 0:
-    winSewers()
-  else:
-    secretDoor()
-
-
+  time.sleep(a)
+  print("......")
+  print()
+  time.sleep(a)
+  print(".......")
+  print()
+  time.sleep(a)
+  print("Finally you hear the doctor exclaim 'You've caught something there. Yes! As a matter of fact -- I think --that this -- might -- be -- our --man!'")
+   print()
+  time.sleep(a)
+  print(".......")
+ print()
+  time.sleep(a)
+  print("You eventually hear them leave the lab. Now is your time to escape!")
+  secretDoor()
 
 def secretDoor():
   print()
   time.sleep(a)
-  print("After dealing with Igor you quickly try to find a way out. You notice that something about the bookcase looks odd")
+  print(" Quickly, try to find a way out! You notice that something about the bookcase looks odd")
   print()
   time.sleep(a)
   print("Could it possibly be a secret door?")
@@ -351,15 +366,7 @@ def library():
   print()
   time.sleep(a)
   print("There is a table in the center of the floor that has  a large book, an ashtray, and a violin and bow.")
-  pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-  if pickup == 'Y' or pickup == 'y':
-    addToInventory("violin")
-    print (inventory)
-    diary()
-  else:
-    print()
-    print("You leave the violin on the table")
-    diary()
+  diary()
 
 def diary():
   print()
