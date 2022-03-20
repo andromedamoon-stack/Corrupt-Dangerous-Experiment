@@ -2,63 +2,28 @@
 # Ver 1.0
 import sys 
 import time
+import random
+
 
 # time delay for text
 a = 2
-b = .2 
+b = .7 
 c = 0.08 
 
-#inventory for items
-inventory = ["flashlight","knife","pipe"]
-
-class Player(object):
-  playerHealth = 65
-  playerDefense = 18
-  playerAttack = 4
+#colors 
+green = "\033[0;32m"
+italic = "\033[3m"
+white = "\033[0;37m"
 
 
-# classes for boss fights
-class Experiment(object):
-  enemyHealth = 80
-  enemyDefense = 20
-  enemyAttack = 8
- 
 
-class Dr_Frankenstien(object):
-  enemyHealth = 64
-  enemyDefense = 12
-  enemyAttack = 3
-  
-
-class Igor(object):
-  enemyHealth = 55
-  enemyDefense = 12
-  enemyAttack = 3
-
-class mutatedRat(object):
-  enemyhealth = 45
-  enemyDefense = 8
-  enemyAttack = 2
-
-class frauBlucher(object):
-  enemyhealh = 45
-  enemyDefense = 8
-  enemyAttack = 2
-
-def attack():
-  global enemyHealth
-  global enemyAttack
-  global enemyDefense
-  global playerAttack
-  global playerDefense
-  global playerHealth
-  
-  playerHealth = playerHealth - enemyAttack 
-  enemyHealth = enemyHealth - playerAttack
-  
-  if playerHealth <= 0:
-    gameOver()
-
+# variables for attack
+EnemyHP = 30
+YourHP = 25
+damage = 0
+damaged = 0
+taunt = 0
+FrankenstienHP = 36
 
 
 def intro():
@@ -119,62 +84,21 @@ def path1():
   time.sleep(a)
   print("The halls stretch on forever, layers of dust cover the walls and floor and you can see quite a few cobwebs.")
   print()
-  print()
-  time.sleep(a)
-  print("To your right is a supply closet.")
-  time.sleep(a)
-  print("""
-█▀▀ █░█ █▀▀ █▀▀ █▄▀   ▀█▀ █░█ █▀▀   █▀█ █▀▀ █▀▀ █ █▀▀ █▀▀   █▀▀ █▀█ █▀█   ▄▀█ █▄░█ █▄█
-█▄▄ █▀█ ██▄ █▄▄ █░█   ░█░ █▀█ ██▄   █▄█ █▀░ █▀░ █ █▄▄ ██▄   █▀░ █▄█ █▀▄   █▀█ █░▀█ ░█░
+  pathCon()
 
-█▀ █░█ █▀█ █▀█ █░░ █ █▀▀ █▀ ▀█
-▄█ █▄█ █▀▀ █▀▀ █▄▄ █ ██▄ ▄█ ░▄""")
-  supplyCloset = input("Y/N:  ")
-  if supplyCloset == 'Y' or supplyCloset == 'y':
-    print()
-    pathSupply()
-  else:
-    print()
-    pathCon()
-
-def pathSupply():
-   print()
-   time.sleep(a)
-   print("You see a flashlight on one of the shelves.")
-   print()
-   time.sleep(b)
-   pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-   if pickup == 'y' or pickup == 'Y':
-    addToInventory("flashlight")
-    pathCon()
-     
-   else:
-    print()
-    time.sleep(a)
-    print("You leave the flashlight on the shelf")
-    pathCon()
 
 def pathCon():
   print()
   time.sleep(a)
-  print("After traversing down the basement hall for a few minutes you can see that the hallway splits off into two paths")
+  print("You find a flashlight in a dusty supply closet")
   print()
   time.sleep(a)
-  print("You see a piece of pipe on the ground near some rubble.")
-  time.sleep(a)
-  pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-  
-  if pickup == 'y' or pickup == 'Y':
-      addToInventory("pipe")
-  else:
-      print("You leave the pipe where it is.")
-
   print()
-  
   time.sleep(a)
   print("You finally reach stone steps that go down a level into a dark path")
+  print()
   time.sleep(a)
-  print(" You can hear the sounds of running water coming from down below in the dark path")
+  print("You can hear the sounds of running water coming from down below in the dark path")
   print()
   time.sleep(a)
   print("You can either go down into the dark path and hope to find a way out or go back to the labratory and fight your way through the castle")
@@ -205,41 +129,41 @@ def pathDark():
   print("A tall dark figure is illuminated by your flashlight")
   print()
   time.sleep(a)
-  print("The man looks similar to the body you saw in the lab.")
+  print("The man looks similar to the body you saw in the lab." )
   print()
   time.sleep(a)
   print("You find yourself frozen in fear. You expect the monster to attack you. He dosn't. Instead he talks")
   print()
-  time.sleep(b)
-  print("What have I done to deserve such a sentence in hell?")
+  time.sleep(a)
+  print("What have I done to deserve such a sentence in hell?"+ green + italic)
+  print()
+  time.sleep(a)
+  print("Born as a demon, a ghoul from a nightmare" + green + italic)
+  print()
+  time.sleep(a)
+  print("Yet one who still suffers and scars like a human as well" + green + italic)
+  print()
+  time.sleep(a)
+  print("Now here I stand, a half of a man" + green + italic)
+  print()
+  time.sleep(a)
+  print("Wondering why I draw breath!" + green + italic)
   print()
   time.sleep(b)
-  print("Born as a demon, a ghoul from a nightmare")
+  print("You realize that this must have been the original creature from Victor Frankenstien's experiments. The tortured soul must have taken refuge in the basement"+ red)
   print()
   time.sleep(b)
-  print("Yet one who still suffers and scars like a human as well")
-  print()
-  time.sleep(b)
-  print("Now here I stand, a half of a man")
-  print()
-  time.sleep(b)
-  print("Wondering why I draw breath!")
-  print()
-  time.sleep(b)
-  print("You realize that this must have been the original creature from Victor Frankenstien's experiments. The tortured soul must have taken refuge in the basement")
-  print()
-  time.sleep(b)
-  print("You now have two options: ")
+  print("You now have two options: " + white)
   print()
   time.sleep(b)
   print("1. Console the creature and ask him for help escaping the castle. 2. Attack the monster")
-
-  if answer == '1':
+  choice = input("What do you choose to do? 1/2   " + white)
+  if choice == '1':
     print()
-    print(" The monster guides you through the rest of the sewers until you reach an exit that leads to the outside world. ")
+    print(" The monster guides you through the rest of the sewers until you reach an exit that leads to the outside world. " + white)
     print()
     time.sleep(a)
-    print("You turn to thank him but find he has already retreated back into the saftey of the dark")
+    print("You turn to thank him but find he has already retreated back into the saftey of the dark" + white )
     winSewers()
     
   else:
@@ -248,10 +172,78 @@ def pathDark():
   
 def Frankenstien():
   print()
-  if  enemyHealth <= 0:
+  global damage
+  global YourHP
+  global FrankenstienHP
+  global damaged 
+ 
+
+  time.sleep(a)
+  print("Boss Fight!")
+  print()
+  time.sleep(b)
+  print("Your Turn!")
+  print()
+  time.sleep(b)
+  print(f"You: " +(str(YourHP))+"HP")
+  Sleep()
+  print(f"Frankenstien"+(str(FrankenstienHP))+ "HP" )
+  print("(1) Attack!")
+  print()
+  time.sleep(b)
+  print("(2) Defend!")
+  print()
+  time.sleep(b)
+  Attack = input("What will you do?")
+  if Attack == '1':
+    print()
+    Attacking = random.randomint(3, 5)
+    Attacking = Attacking + damage
+    print(reset+" You did"+(str(Attacking)) +"damage")
+    FrankenstienHP = FrankenstienHP - Attacking
+    time.sleep(a)
+  if Attack == '2':
+    print()
+    print(f" You defended yourself.")
+    print()
+    time.sleep(b)
+    print("Frankenstien's attacks do less damage now")
+    damaged = damaged + random.randint(2,4)
+
+  if FrankenstienHp <= 0:
+    print()
+    time.sleep(b)
+    print("You beat Frankenstien!")
     winSewers()
   else:
+    frankTurn()
+
+def frankTurn():
+  print()
+  global damage
+  global YourHP
+  global FrankenstienHP
+  global damaged 
+  global Attacked
+  print("Frankenstien's Turn!")
+  Attacked = random.randint(6,10)
+  Attacked = Attacked - damaged
+  if Attacked  < 1:  
+      Attacked = random.randint(1,4)
+  print("Frankenstien did" + (str(Attacked)) +" damage")
+  YourHP = YourHP - Attacked
+  time.sleep(b)
+  if YourHP <= 0:
+    print("You lost. You are knocked uncouncious")
     gameOver()
+  else:
+    Frankenstien()
+
+
+
+
+
+
   
 def hide():
   print()
@@ -259,28 +251,11 @@ def hide():
   print("You quickly dash under a desk that is in a cluttered corner of the room. The clutter and desk obscure you from view as long as you don't peek your head out")
   print()
   time.sleep(a)
-  print("Just a minute late you hear the doctor and another person enter the room while they talk about about drawing plans up.")
+  print("Just a minute later you hear the doctor and another person enter the room while they talk about about drawing plans up.")
   print()
-  time.sleep(a)
-  print("They seem to be distracted in the other area of the large labratory. You could take a moment to examine some of the desk drawers")
-  answer = input("Do you want to examine the desk for any supplies? (Y/N)")
-  if answer == 'y' or answer == 'Y':
-    print()
-    desk()
-  else:
-    print()
-    leaveLab()
+  leaveLab()
 
-def desk():
-  print()
-  time.sleep(a)
-  print("You root around in one of the drawers and find some old papers and a knife")
-  pickup = input("Do you want to add this to your Inventory? (Y/N)  ")
-  if pickup == 'y' or pickup == 'Y':
-    addToInventory("knife")
-    leaveLab()
-  else:
-    leaveLab()
+
   
 def leaveLab():
   print()
@@ -294,7 +269,7 @@ def leaveLab():
   print(".......")
   print()
   time.sleep(a)
-  print("Finally you hear the doctor exclaim 'You've caught something there. Yes! As a matter of fact -- I think --that this -- might -- be -- our --man!'")
+  print("Finally you hear the doctor exclaim 'You've caught something there. Yes! As a matter of fact I think that this might be our man!'")
   print()
   time.sleep(a)
   print(".......")
@@ -306,13 +281,10 @@ def leaveLab():
 def secretDoor():
   print()
   time.sleep(a)
-  print(" Quickly, try to find a way out! You notice that something about the bookcase looks odd")
+  print("Quickly, try to find a way out! You notice that something about the bookcase looks odd")
   print()
   time.sleep(a)
   print("Could it possibly be a secret door?")
-  print()
-  time.sleep(a)
-  print("You notice that there is soft music coming from somewhere")
   print()
   time.sleep(a)
   print("You notice that there is soft music coming from somewhere")
@@ -345,10 +317,10 @@ def passageway():
   print(" As you pass one section of wall, an ancient sign can just barely be made out in the after glow of their light.")
   print()
   print()
-  print("""######################################
+  print("""
            #  CAPACITY: NOT MORE THAN 3 PERSONS #
            #      BY ORDER OF: FIRE DEPT.       #
-           #######################################
+          
            """)
   print()
   time.sleep(a)
@@ -372,30 +344,31 @@ def diary():
   print()
   diary = input("Would you like to read the book? ( Y/N)")
   if diary == 'Y' or diary == 'y':
-    print('''HOW I DID IT" BY VICTOR FRANKENSTEIN.
+    print('''        
+                HOW I DID IT" BY VICTOR FRANKENSTEIN.
                 ‘Whence, I often asked myself, did
                 the principles of life proceed? To
                 examine the causes of life... we
                 must first have recourse to death.
-''')
+'''+ bright_red)
     time.sleep(a)
     print('''
-            ...and as soon as the dazzling light
+               ...and as soon as the dazzling light
                       vanished, the oak tree had
                     disappeared. I knew then that
                 electricity and galvanism had changed
-                          my life.''')
+                          my life.''' )
     print()
     time.sleep(a)
-    print('''When I look back now, it seems to
+    print('''       When I look back now, it seems to
               me as if this almost miraculous event
                 obliterated any last effort by the
                 spirit of preservation to avert the
                 storm that was even then hanging in
-                          the stars.''')
+                          the stars.''' )
     print()
     time.sleep(a)
-    print(''' Until, from the midst of this
+    print('''        Until, from the midst of this
                 darkness, a sudden light broke in
                 upon me -- a light so brilliant and
                 wondrous, and yet so simple! ''')
@@ -415,24 +388,20 @@ def diary():
     print("""
               Nay, even more -- I, myself became
               capable of bestowing animation upon
-              lifeless matter.""")
+              lifeless matter."""+ bright_red)
     print()
     time.sleep(a)
     print("""
             IRREVERSIBLY COMMITTED TO THE DARK
             DESTINY OF ALL THOSE WHO BEAR THE NAME OF 'FRANKENST' NAME
-            OR 'FRANKENSTEIN' 'FRONKONSTEEN.'""")
+            OR 'FRANKENSTEIN' 'FRONKONSTEEN.'""" + bright_red)
 
             
-    castle()
-            
+    hallwayStairs()
   else:
-    print()
-    castle()
+    hallwayStairs()
+            
 
-
-def castle():
-  print()
 
   
 def wait():
@@ -450,7 +419,7 @@ def wait():
 def hallwayStairs():
   print()
   time.sleep(a)
-  print(" You step out of the secret door into a large wide hallway. You can see the forest when you look out the window and what looks to be smoke in the distance.")
+  print(" You step out of the secret door into a large wide hallway. You can see the forest when you look out the window and what looks to be smoke in the distance." + white)
   print()
   time.sleep(a)
   print("To your right the hallway eventually leads up to stairs that go upward. Possibly back to the lab")
@@ -464,13 +433,20 @@ def hallwayStairs():
   time.sleep(a)
   print("Just as you pass the second door a middle age woman steps out of the room carrying a violin that looks suspiciously like the one from the office")
   print()
-  time.sleep(b)
-  print(" She hasn't noticed you yet! Quick what will you do?")
+  time.sleep(a)
+  print("She hasn't noticed you yet! Quick what will you do?")
+  print()
   print("1. Attempt to knock her out. 2. Quickly introduce yourself and convince her you area a new assistant who got lost looking for the doctor")
-  answer = input("What option will you choose? 1 or 2")
+  print()
+  answer = input("What option will you choose? 1 or 2  ")
   if answer == '1':
     print()
-    frauBlutcher()
+    time.sleep(a)
+    print("You manage to knock out the woman before she notices you. She looks to be out cold")
+    print()
+    time.sleep(a)
+    print("You aren't sure how long she will be unconcious. You grab the candlestick and quickly head down the hallway to the stairs")
+    foyer()
   else:
     print()
     time.sleep(a)
@@ -480,61 +456,116 @@ def hallwayStairs():
     print("I believe that may have been his name, yes. You know I think I'll just wait for Herr Doctor near the front door!")
     print()
     time.sleep(a)
-    print("You quickly start heading down the steps at a brisk pace. Frau Blutcher shrugs and leaves to another part of the castle unconcerned about your story")
+    print("You quickly start heading down the steps at a brisk pace. Frau Blutcher shrugs and leaves to another part of the castle unconcerned about your story or presence in the castle" )
     foyer()
 
-def frauBlutcher():
-  print()
-  if  enemyHealth <= 0:
-    foyer()
-  else:
-    gameOver()
+
 def foyer():
   print() 
   time.sleep(a)
   print('Once Frau Blutcher is out of sight you break into a run down the rest of the hallway and down the stairs')
   print()
-  print("""When you get to the bottom of the stairs and into the foyer there is a gigantic door with a small door inside the gigantic door. Next to the door is Dr.Frankenstien inspecting several boxes""")
+  print("When you get to the bottom of the stairs and into the foyer there is a gigantic door with a small door inside the gigantic door. Next to the door is Dr.Frankenstien inspecting several boxes" )
   time.sleep(b)
-  print('"Who are you?"')
+  print('"Who are you?"' )
   print()
   time.sleep(b)
-  print('" Who Am I? Im Fredereck Fronkonsteen"')
+  print("Who Am I? Im Fredereck Fronkonsteen" )
   print()
   time.sleep(b)
-  print('" Frederick Frankenstein? Like Victor Frankenstien"')
+  print('"Frederick Frankenstein? Like Victor Frankenstien"' )
   print()
   time.sleep(b)
-  print('"Fron kon steen!"')
+  print("Fron kon steen!")
   print()
   time.sleep(b)
   print('"Are you putting me on?"')
   print()
   time.sleep(b)
-  print("Are you putting me on?")
-  print()
-  time.sleep(b)
-  print()
-  time.sleep(b)
-  print("""No, it's pronounced Fron kon steen. It's Fredereck Fronkonsteen. Who are you? You were sent by Herr Falkstein, weren't you?""")
-  answer = input("""1: Herr who? No-one sent me you crazy scientist! (attack)   \n 2:Herr Falkstein, of course! Yes he thought you might need an extra assistant""")
+  print("No, it's pronounced Fron kon steen. It's Fredereck Fronkonsteen. Who are you? You were sent by Herr Falkstein, weren't you?" )
+  answer = input("""1: Herr who? No-one sent me you crazy madman. I've seen what you do in your lab! (attack)  2:Herr Falkstein, of course! Yes he thought you might need an extra assistant   """)
   if answer == '1':
     print()
-    print("Stop that! Now just stop that this instant and listen to me!")
+    print("Stop that! Now just stop that this instant and listen to me!" )
     drBoss()
   else:
     print()
+    time.sleep(b)
+    print("Wonderful. We should get you settled in. Aye-gor!…he must be farther in the castle. Let me go find him and have him bring in your luggage" )
+    print()
+    time.sleep(b)
     print('You leave out the front door while the doctor wanders off in search of Igor')
     outsideCastle()
 
 def drBoss():
   print()
-  if  enemyHealth <= 0:
-    winRun()
-  else:
-    gameOver()
+  global damage
+  global YourHP
+  global enemyHP
+  global damaged 
+ 
 
-        
+  time.sleep(a)
+  print("Boss Fight!")
+  print()
+  time.sleep(b)
+  print("Your Turn!")
+  print()
+  time.sleep(b)
+  print(f"You: " +(str(YourHP))+"HP")
+  Sleep()
+  print(f"Doctor's"+(str(enemyHP))+ "HP" )
+  print("(1) Attack!")
+  print()
+  time.sleep(b)
+  print("(2) Defend!")
+  print()
+  time.sleep(b)
+  Attack = input("What will you do?")
+  if Attack == '1':
+    print()
+    Attacking = random.randomint(3, 5)
+    Attacking = Attacking + damage
+    print(reset+" You did"+(str(Attacking)) +"damage")
+    FrankenstienHP = FrankenstienHP - Attacking
+    time.sleep(a)
+  if Attack == '2':
+    print()
+    print(f" You defended yourself.")
+    print()
+    time.sleep(b)
+    print("The Doctor's attacks do less damage now")
+    damaged = damaged + random.randint(2,4)
+
+  if enemynHp <= 0:
+    print()
+    time.sleep(b)
+    print("You beat Dr.Fronkensteen!")
+    winSewers()
+  else:
+      drTurn()
+
+def drTurn():
+  print()
+  global damage
+  global YourHP
+  global enemyHP
+  global damaged 
+  global Attacked
+  print("The Doctor's Turn!")
+  Attacked = random.randint(6,10)
+  Attacked = Attacked - damaged
+  if Attacked  < 1:  
+      Attacked = random.randint(1,4)
+  print("The doctor did" + (str(Attacked)) +" damage")
+  YourHP = YourHP - Attacked
+  time.sleep(b)
+  if YourHP <= 0:
+    print("You lost. You are knocked uncouncious")
+    gameOver()
+  else:
+    drBoss()
+    
 def outsideCastle():
   print()
   time.sleep(a)
@@ -560,27 +591,28 @@ def outsideCastle():
 def winSewers():
   print()
   time.sleep(a)
-  print(""" After harrowing journey through the dark sewers you finally find what looks to be a sewage tunnel that leads outside.""")
-  time.sleep(b)
+  print("After harrowing journey through the lab and  dark sewers you finally find what looks to be a sewage tunnel that leads outside." + white)
+  print()
+  time.sleep(a)
   print("You look behind you to see the imposing castle loom over you. You think you can see a town in the distance, possibly about a mile away")
   print()
-  time.sleep(b)
+  time.sleep(a)
   print("You escape to the town to find help")
   print()
-  time.sleep(b)
-  print("You've escapes from the clastle and avoided becoming a new experiment")
-  print()
-  print()
-  time.sleep(b)
-  print("Or did you really escape in time?")
+  time.sleep(a)
+  print("You've escaped from the clastle and avoided becoming a new experiment!")
   print()
   print(".......")
-  playAgain()
+  time.sleep(a)
+  print("Or did you really escape in time?" + red)
+  print()
+  print("......."+ red)
+  restart()
   
 def winCastle():
   print()
   time.sleep(b)
-  print("You take your suitcase and walk back into the castle")
+  print("You take your suitcase and walk back into the castle"+ white)
   print()
   time.sleep(b)
   print("You are overwheledmed with curiosity about what really goes on in that labratory. You decide to join the doctor as a second assistant.")
@@ -593,43 +625,44 @@ def winCastle():
   print()
   time.sleep(b)
   print("""Fredrick, wearing a long, white surgeon's gown and surgical
-mask, stands over the "Body," which is strapped across the
-chest and thighs. Fredrick has a thimble on the finger of one
-hand -- a needle and thread in the other.""")
+mask, stands over the Body which is strapped across the chest and thighs.""" + red)
+        
+  print("""Fredrick has a thimble on the finger of one
+hand a needle and thread in the other.""" + red)
   print()
   time.sleep(b)
-  print("""The "Body" is on an operating table, which is in the center
+  print("""The Body is on an operating table, which is in the center
 of a platform directly below the opening in the ceiling.
-Inga stands nearby.""")
+Inga stands nearby.""" + white)
   print()
   time.sleep(b)
   print("""The doctor's face is illuminated by a crack of lightning. The dark circles under his eyes suggest that he is irreverably insane.""")
-  print("You are near the switches waiting for the command to start the process. You have a similar crazed expression as Igor and the doctor. ")
+  print("You are near the switches waiting for the command to start the process. You have a similar crazed expression as Igor and the doctor. " + red)
   print()
   time.sleep(b)
   print("Go!!")
-  print("........")
+  print("........"+ white )
   print(".........")
   print()
   print()
   time.sleep(b)
-  startAgain()
+  restart()
 
         
 def winRun():
   print()
   time.sleep(b)
-  print("You successfully escape from the castle with one of the horses. After several minutes of riding down the pathway ou think you can see a town in the distance, possibly about a mile away")
+  print("You successfully escape from the castle with one of the horses. After several minutes of riding down the pathway ou think you can see a town in the distance, possibly about a mile away"+ white)
   print()
   time.sleep(b)
   print("You've escaped from the clastle and avoided becoming a new experiment and now see your chance to get even further away by taking a train from the town to somewhere far away from that damned castle.")
   print()
   print()
   time.sleep(b)
-  print("Or did you really escape in time?")
+  print("Or did you really escape in time?" + red)
   print()
   print(".......")
-  playAgain()
+  restart()
 
 def gameOver():
   print()
@@ -643,16 +676,11 @@ def gameOver():
   print("you hear the sounds of people shuffling around you and the sounds of mad laughter.")
   print()
   time.sleep(b)
-  print('''🆂🅾🅾🅽, 🅰🅻🅻 🆃🅷🅴 🅴🅻🅴🅲🆃🆁🅸🅲🅰🅻 🆂🅴🅲🆁🅴🆃🆂 🅾🅵 🅷🅴🅰🆅🅴🅽 🆂🅷🅰🅻🅻 🅱🅴 🅼🅸🅽🅴❗''')
+  print('"Soon all the electrical secrets of heaven shall be mine!"')
   time.sleep(b)
-  print("""
-▒█▀▀█ █▀▀█ ░▀░ █▀▀ █▀▀ 　 ▀▀█▀▀ █░░█ █▀▀ 　 █▀▀█ █░░ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ ░░ 　 ▀█▀ █▀▀▀ █▀▀█ █▀▀█ █ 
-▒█▄▄▀ █▄▄█ ▀█▀ ▀▀█ █▀▀ 　 ░░█░░ █▀▀█ █▀▀ 　 █░░█ █░░ █▄▄█ ░░█░░ █▀▀ █░░█ █▄▄▀ █░▀░█ ▄▄ 　 ▒█░ █░▀█ █░░█ █▄▄▀ ▀ 
-▒█░▒█ ▀░░▀ ▀▀▀ ▀▀▀ ▀▀▀ 　 ░░▀░░ ▀░░▀ ▀▀▀ 　 █▀▀▀ ▀▀▀ ▀░░▀ ░░▀░░ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ░█ 　 ▄█▄ ▀▀▀▀ ▀▀▀▀ ▀░▀▀ ▄""")
+  print('"Raise the Platform Igor!"')
   time.sleep(b)
-  print("""
-█▄█ █▀█ █░█ ▀ █░█ █▀▀   █▀▀ █▀█ ▀█▀   █ ▀█▀ ░   █▀▄▀█ ▄▀█ █▀ ▀█▀ █▀▀ █▀█ ░
-░█░ █▄█ █▄█ ░ ▀▄▀ ██▄   █▄█ █▄█ ░█░   █ ░█░ █   █░▀░█ █▀█ ▄█ ░█░ ██▄ █▀▄ ▄""")
+  print("You've got it Master!")
   time.sleep(a)
   print("The platform rises higher and higher. Rain starts to pour in.")
   print()
@@ -670,10 +698,10 @@ def gameOver():
   print("𝘮𝘪𝘮𝘪𝘤 𝘵𝘩𝘦 𝘦𝘢𝘳𝘵𝘩𝘲𝘶𝘢𝘬𝘦 𝘢𝘯𝘥 𝘦𝘷𝘦𝘯 𝘮𝘰𝘤𝘬 𝘵𝘩𝘦 𝘪𝘯𝘷𝘪𝘴𝘪𝘣𝘭𝘦 𝘸𝘰𝘳𝘭𝘥 𝘸𝘪𝘵𝘩 𝘪𝘵𝘴 𝘰𝘸𝘯 𝘴𝘩𝘢𝘥𝘰𝘸𝘴!")
   print()
   print()
-  print("""🅶🅴🆃 🆁🅴🅰🅳🆈❗🆃🅷🅴 🅿🅻🅰🆃🅵🅾🆁🅼 🅽🅴🅰🆁🆂 🆃🅷🅴 🅾🅿🅴🅽🅸🅽🅶.""")
+  print('"Get ready the platform nears the opening"')
   print()
   print()
-  print("The platform rises through the opening and then stops. ")
+  print("The platform rises through the opening and then stops. " + white)
   print()
   print("You see a flash of lightning")
   print(".........")
@@ -682,10 +710,10 @@ def gameOver():
   playAgain()
 
 
-def playAgain():
+def restart():
   print("""
-█▀▄ █▀█   █▄█ █▀█ █░█   █░█░█ ▄▀█ █▄░█ ▀█▀   ▀█▀ █▀█   █▀█ █░░ ▄▀█ █▄█   ▄▀█ █▀▀ ▄▀█ █ █▄░█ ▀█
-█▄▀ █▄█   ░█░ █▄█ █▄█   ▀▄▀▄▀ █▀█ █░▀█ ░█░   ░█░ █▄█   █▀▀ █▄▄ █▀█ ░█░   █▀█ █▄█ █▀█ █ █░▀█ ░▄""")
+█▀█ █░░ ▄▀█ █▄█   ▄▀█ █▀▀ ▄▀█ █ █▄░█ ▀█
+█▀▀ █▄▄ █▀█ ░█░   █▀█ █▄█ █▀█ █ █░▀█ ░▄""")
   answer = input("(Y/N):   ")
   if answer == 'Y' or answer == 'y':
    intro()
@@ -699,15 +727,6 @@ def playAgain():
 
 
         
-# adds items to inventory
-
-def addToInventory(item):
-  inventory.append(item)
-
-
-def printInventory(item):
-
-
 
 
 ## main function ##
@@ -728,8 +747,9 @@ print()
 print("""A͇͇̝ Y̟̞͜o͕͔͕u̺̙n͉̠̙g͉͚̪ F͔̫r͓̞̙a͓̪̦n͇̝͜k̻̪̺e͔̟͇n͚͔̞s͕̫͖t̠̼e̪̺̞i͓͍̟n͓̞͚ t͇͚͜e͎̪͙x̫̙̫t͕͔̦ a͉͙̠d̫̟͖v̝̼͜e̟̟̼n̪̞͜t͓͖u̪͕͜r̟̼̦e̢̠͔""")
 print()
 print("Be careful of the choices you make- or you might end up as the next experiment")
+print()
 time.sleep(b)
-startGame = input("""D̒͒͐ò͝͝ y̾͘̚ö́́͋u͌́̓ d̀͊̐a̓̓͝r̒̒e͌͒̒ t͋̿͐o͛̈́͘ e͛͐̓n͒̈́̈́t̓̀͘ë́͛̕r͒͒̿?͒͋͝ (̔̔͘Y͌͝/͑̈́͌ N͐̐͝)͐̓͝""")
+startGame = input("""D̒͒͐ò͝͝ y̾͘̚ö́́͋u͌́̓ d̀͊̐a̓̓͝r̒̒e͌͒̒ t͋̿͐o͛̈́͘ e͛͐̓n͒̈́̈́t̓̀͘ë́͛̕r͒͒̿?͒͋͝ (̔̔͘Y͌͝/͑̈́͌ N͐̐͝)͐̓͝"  """)
 if startGame == 'n' or startGame == 'N':
   print("""
 █▀▄▀█ ▄▀█ █▄█ █▄▄ █▀▀   █▄░█ █▀▀ ▀▄▀ ▀█▀   ▀█▀ █ █▀▄▀█ █▀▀
